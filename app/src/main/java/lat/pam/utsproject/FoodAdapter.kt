@@ -6,9 +6,30 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import lat.pam.utsproject.Food
+import lat.pam.utsproject.R
 
+class FoodAdapter(
+    private val foodList: List<Food>,
+    private val onItemClick: (Food) -> Unit
+) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
-class FoodAdapter(private val foodList: List<Food>) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
+    inner class FoodViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val foodName = view.findViewById<TextView>(R.id.foodName)
+        private val foodDescription = view.findViewById<TextView>(R.id.foodDescription)
+        private val foodImage = view.findViewById<ImageView>(R.id.foodImage)
+
+        fun bind(food: Food) {
+            foodName.text = food.name
+            foodDescription.text = food.description
+            foodImage.setImageResource(food.imageResourceId)
+
+            // Set the click listener for the item
+            itemView.setOnClickListener {
+                onItemClick(food)
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout_food, parent, false)
@@ -16,19 +37,8 @@ class FoodAdapter(private val foodList: List<Food>) : RecyclerView.Adapter<FoodA
     }
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
-        val food = foodList[position]
-        holder.foodName.text = food.name
-        holder.foodDescription.text = food.description
-        holder.foodImage.setImageResource(food.imageResourceId)
+        holder.bind(foodList[position])
     }
 
-    override fun getItemCount(): Int {
-        return foodList.size
-    }
-
-    class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val foodImage: ImageView = itemView.findViewById(R.id.foodImage)
-        val foodName: TextView = itemView.findViewById(R.id.foodName)
-        val foodDescription: TextView = itemView.findViewById(R.id.foodDescription)
-    }
+    override fun getItemCount(): Int = foodList.size
 }

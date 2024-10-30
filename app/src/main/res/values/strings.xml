@@ -5,4 +5,7 @@
     <string name="login">Login\n</string>
     <string name="register">Register Here</string>
     <string name="food_list_title">Food and Beverages</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="login_link">Login</string>
+    <string name="add_order">Add Order</string>
 </resources>

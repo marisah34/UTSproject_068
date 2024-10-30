@@ -7,10 +7,11 @@
     <ImageView
         android:id="@+id/foodImage"
         android:layout_width="60dp"
+        android:layout_marginTop="2dp"
         android:layout_height="60dp"
         android:src="@drawable/batagor"
-        android:layout_marginEnd="8dp"/>
-
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"/>
     <!-- Nama dan Deskripsi Makanan -->
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,7 +27,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:layout_marginBottom="4dp"/>
+            android:layout_marginBottom="3dp"/>
 
         <!-- Deskripsi Makanan -->
         <TextView
@@ -35,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="Description of the food."
             android:textSize="14sp"
-            android:textColor="#6D6D6D"/>
+            android:textColor="@color/black"/>
     </LinearLayout>
 
 </LinearLayout>

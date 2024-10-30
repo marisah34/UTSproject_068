@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:background="@android:color/white"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <!-- Logo Aplikasi -->
     <ImageView
@@ -17,7 +17,6 @@
         android:layout_height="120dp"
         android:src="@drawable/ic_launcher_foreground"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"/>
 
     <!-- Username Field with TextInputLayout -->
@@ -42,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_password"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="12dp"
         app:startIconDrawable="@drawable/ic_lock"
         android:paddingHorizontal="16dp">
 
@@ -54,25 +53,42 @@
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Button Login -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
+    <!-- Confirm Password Field with TextInputLayout -->
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:hint="@string/hint_confirm_password"
+        android:layout_marginBottom="24dp"
+        app:startIconDrawable="@drawable/ic_lock"
+        android:paddingHorizontal="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Button Register -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         app:cornerRadius="8dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="@android:color/holo_green_dark"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:layout_marginHorizontal="16dp" />
 
-    <!-- Register Link -->
+    <!-- Login Link -->
     <TextView
-        android:id="@+id/Register"
+        android:id="@+id/Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register"
+        android:text="@string/login_link"
         android:textColor="@android:color/black"
         android:layout_gravity="center"
         android:clickable="true"
